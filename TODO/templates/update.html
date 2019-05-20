@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <body>
+
+   {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+   <!--
+       title = db.Column(db.String(20))
+    contents = db.Column(db.String(100))
+    priority = db.Column(db.Integer)
+    done = db.Column(db.Boolean)
+    due = db.Column(db.Integer)
+   -->
+      <form action = "{{ request.path }}" method = "post">
+
+         <label for = "update_title">UPDATE TITLE</label><br>
+         <input type = "text" name = "update_title" placeholder = "변경할 내용을 입력해 주세요" /><br>
+         <label for = "update_contents">UPDATE CONTENTS</label><br>
+         <input type = "text" name = "update_contents" placeholder = "변경할 내용을 입력해 주세요" /><br>
+         <label for = "update_priority">UPDATE PRIORITY</label><br>
+         <input type = "text" name = "update_priority" placeholder = "변경할 내용을 입력해 주세요" /><br>
+         <label for = "update_done">UPDATE DONE</label><br>
+         <input type = "text" name = "update_done" placeholder = "변경할 내용을 입력해 주세요" /><br>
+         <input type = "submit" value = "Submit" />
+      </form>
+   </body>
+</html>

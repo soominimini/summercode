@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <body>
+   <!--
+       title = db.Column(db.String(20))
+    contents = db.Column(db.String(100))
+    priority = db.Column(db.Integer)
+    done = db.Column(db.Boolean)
+    due = db.Column(db.Integer)
+   -->
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "title">Title</label><br>
+         <input type = "text" name = "title" placeholder = "할 일의 제목을 입력해 주세요" /><br>
+
+         <label for = "contents">Contents</label><br>
+         <textarea name = "contents" placeholder = "할 일의 내용을 입력해 주세요"></textarea><br>
+<!--
+         <label for = "priority">Priority</label><br>
+         <input type = "text" name = "priority" placeholder = "할 일의 우선순위를 입력해 주세요" /><br>
+         -->
+         <label for = "priority">Priority (between 1 to 100)</label><br>
+         <input type = "number" name = "priority" min ="1" max ="100" placeholder = "할 일의 우선순위를 입력해 주세요" /><br>
+
+         <label for = "done">Done</label><br>
+         <input type = "text" name = "done"  placeholder = "할 일이 끝났나요?" /><br>
+
+          <label for = "due">Due</label><br>
+         <input type = "date" name = "due" placeholder = "할 일의 기한을 입력해 주세요" /><br>
+
+         <input type = "submit" value = "Submit" />
+      </form>
+   </body>
+</html>

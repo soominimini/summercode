@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+   <head></head>
+   <body>
+      <h3>TODO Lists (<a href = "{{ url_for('TODO_create') }}">TODO List Add
+         </a>)</h3>
+
+      <table>
+         <thead>
+            <tr>
+                <th>Title</th>
+
+               <th>Contents</th>
+
+
+               <th>Priority</th>
+                <th></th>
+                <th>Done</th>
+
+                <th></th><th></th><th></th><th></th>
+                <th>Due</th>
+
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for lists in list %}
+               <tr>
+
+                        <td><a href="/update/{{lists.id}}/"> {{ lists.title }}</a></td>
+
+                        <td><a href="/update/{{lists.id}}/"> {{ lists.contents }}</a></td>
+                        <td><a href="/update/{{lists.id}}/"> {{ lists.priority }}</a></td>
+                          <td></td>
+                        <td><a href="/update/{{lists.id}}/"> {{ lists.done }}</a></td>
+                        <th></th><th></th><th></th><th></th>
+                        <td>{{ lists.due }}</td>
+                         <td><a href = "/delete/{{lists.id}}/">삭제 </a> </td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </body>
+</html>
